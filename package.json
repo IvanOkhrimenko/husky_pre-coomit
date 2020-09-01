@@ -51,7 +51,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged && ng lint && ng test",
+      "pre-commit": "pretty-quick --staged && ng lint && ng test --watch=false --code-coverage && compodoc -p tsconfig.app.json --coverageTest 0",
       "pre-push": "ng build --aot true"
     }
   }
