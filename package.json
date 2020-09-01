@@ -8,7 +8,11 @@
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e",
-    "compodoc": "npx compodoc -p tsconfig.app.json"
+    "compodoc": "npx compodoc -p tsconfig.app.json",
+    "dev:ssr": "ng run testProject:serve-ssr",
+    "serve:ssr": "node dist/testProject/server/main.js",
+    "build:ssr": "ng build --prod && ng run testProject:server:production",
+    "prerender": "ng run testProject:prerender"
   },
   "private": true,
   "dependencies": {
@@ -19,7 +23,10 @@
     "@angular/forms": "~10.0.9",
     "@angular/platform-browser": "~10.0.9",
     "@angular/platform-browser-dynamic": "~10.0.9",
+    "@angular/platform-server": "~10.0.9",
     "@angular/router": "~10.0.9",
+    "@nguniversal/express-engine": "^10.0.2",
+    "express": "^4.15.2",
     "lint-staged": "^8.2.1",
     "rxjs": "~6.5.5",
     "tslib": "^2.0.0",
@@ -30,6 +37,8 @@
     "@angular/cli": "~10.0.6",
     "@angular/compiler-cli": "~10.0.9",
     "@compodoc/compodoc": "^1.1.11",
+    "@nguniversal/builders": "^10.0.2",
+    "@types/express": "^4.17.0",
     "@types/jasmine": "~3.5.0",
     "@types/jasminewd2": "~2.0.3",
     "@types/node": "^12.11.1",
